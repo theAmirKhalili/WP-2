@@ -30,7 +30,7 @@ body {
     text-align: center;
     color:teal ;
     font-weight: 300;
-    font-size: 16px;
+    font-size: 20px;
 
 }
 
@@ -68,6 +68,10 @@ fieldset{
 
 }
 
+.controls {
+    line-height: 1.5;
+}
+
 ::-webkit-input-placeholder { 
     font-family: f2;
 }
@@ -79,4 +83,5 @@ input[type="text"]
 {
     font-size:12px;
     font-family: f2;
+    
 }
