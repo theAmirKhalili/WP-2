@@ -79,7 +79,7 @@
                        <label for="phoneNum">شماره تلفن همراه</label>
                     </div>
                     <div class="controls">
-                       <input class="input_c en" type="text" name="phoneNum" id="phoneNum" value="09"  onkeypress= "checkPhoneNum(event, 'phoneNum');" onkeydown ="checkPhoneNum_error(event, 'phoneNum');">
+                       <input class="input_c en" type="text" name="phoneNum" id="phoneNum" value="09"  onkeypress="checkPhoneNum(event, 'phoneNum');" onkeydown ="checkPhoneNum_error(event, 'phoneNum');">
                     </div>
                     <span class="error" id="phoneNum-error"></span>
                 </div>
@@ -90,8 +90,9 @@
                        <label for="ssn">کد ملی</label>
                     </div>
                     <div class="controls">
-                       <input class="input_c" type="text" name="ssn">
+                       <input class="input_c en" type="text" name="ssn" id="ssn" onkeypress="checkSsn(event, 'ssn');" onkeydown="checkSsn_error(event, 'ssn');">
                     </div>
+                    <span class="error" id="ssn-error"></span>
                 </div>
 
 
@@ -100,8 +101,9 @@
                        <label for="pass">رمز عبور</label>
                     </div>
                     <div class="controls">
-                       <input class="input_c en" type="text" name="pass">
+                       <input class="input_c en" type="text" name="pass" id="pass" onkeypress="checkPass(event, 'ssn');" onkeydown="checkPass_error(event, 'ssn');">
                     </div>
+                    <span class="error" id="pass-error"></span>
                 </div>
 
 

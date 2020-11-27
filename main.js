@@ -98,3 +98,33 @@ function checkPhoneNum_error(e, id) {
     document.getElementById(id+'-error').innerHTML = "اطلاعات وارد شده قابل قبول نیست.";
 }
 
+
+function checkSsn(e, id) {
+    if(e.key == 8) return;
+    var _val = document.getElementById(id).value;
+    format =  /^\d{3}-\d{6}-\d{1}$/;
+
+    val = _val.replace(/(\d{3})(\d{6})(\d)/, '$1-$2-$3');
+
+    document.getElementById(id).value = val;
+    _val = document.getElementById(id).value;
+    if(format.test(_val)){
+        return true;
+    }
+}
+
+function checkSsn_error(e, id) {
+    if(e.key == 8) return;
+    format =  /^\d{3}-\d{6}-\d{1}$/;
+    var _val = document.getElementById(id).value;
+    val = _val.replace(/(\d{3})(\d{6})(\d)/, '$1-$2-$3');
+    document.getElementById(id).value = val;
+    _val = document.getElementById(id).value;
+    if(format.test(_val)){
+        document.getElementById(id+'-error').innerHTML = "";
+        return true;
+    }
+    else if (_val.length != 0 && _val.length != 12 ){
+        document.getElementById(id+'-error').innerHTML = "اطلاعات وارد شده قابل قبول نیست.";
+    }
+}
