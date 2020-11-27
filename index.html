@@ -20,7 +20,7 @@
                        <label for="sex">عنوان</label>
                     </div>
                     <div class="controls">
-                        <select class="select"name ="sex" autofocus>
+                        <select class="select"name ="sex" id= "sex"autofocus>
                             <option value="item-1">مرد</option>
                             <option value="item-2">زن</option>
                             <option value="item-3">غیره</option>
@@ -172,11 +172,8 @@
                 </div>
 
                 <div class="btn">
-                    <input class="submit"type="submit" name="submit" value="ارسال">
+                    <input class="submit"type="submit" name="submit" value="ارسال" onclick="return formValid()">
                 </div>
-
-
-
             </fieldset>
         </form>
     </div>
