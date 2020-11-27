@@ -34,7 +34,7 @@
                        <label for="uiName">نام</label>
                     </div>
                     <div class="controls">
-                       <input class= "input_c" type="text" name="uiName" id="uiName" onkeypress="allowPersian(e)">
+                       <input class= "input_c" type="text" name="uiName" id="uiName" onkeypress="return allowPersian(event);">
                     </div>
                 </div>
 
@@ -44,7 +44,7 @@
                        <label for="uiLastName">نام خانوادگی</label>
                     </div>
                     <div class="controls">
-                       <input class="input_c" type="text" name="uiLastName">
+                       <input class="input_c" type="text" name="uiLastName" onkeypress="return allowPersian(event);">
                     </div>
                 </div>
 
