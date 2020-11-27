@@ -127,6 +127,10 @@ select{
     background-color:#e3255b;
     color: white;
     cursor: pointer;
-    
 }
 
+.error {
+    direction: rtl;
+    font-size: 12px;
+    color: #dc3545;
+}

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="main.css">
-    <script src="main.js"></script>
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ورود</title>
 </head>
@@ -34,8 +34,9 @@
                        <label for="uiName">نام</label>
                     </div>
                     <div class="controls">
-                       <input class= "input_c" type="text" name="uiName" id="uiName" onkeypress="return allowPersian(event);">
+                       <input class= "input_c" type="text" name="uiName" id="uiName" onkeypress="allowPersian(event);setLimit(event, 50, 'uiName');" onkeydown="checkFloor(event, 3, 'uiName');">
                     </div>
+                    <span class="error" id="uiName-error"></span>
                 </div>
 
 
@@ -44,18 +45,20 @@
                        <label for="uiLastName">نام خانوادگی</label>
                     </div>
                     <div class="controls">
-                       <input class="input_c" type="text" name="uiLastName" onkeypress="return allowPersian(event);">
+                       <input class="input_c" type="text" name="uiLastName" id="uiLastName" onkeypress="allowPersian(event);setLimit(event, 100, 'uiLastName');" onkeydown="checkFloor(event, 3, 'uiLastName');">
                     </div>
+                    <span class="error" id="uiLastName-error"></span>
                 </div>
 
 
                 <div class="field">
                     <div class="caption">
-                       <label for="uiNameEn">نام خانوادگی(انگلیسی)</label>
+                       <label for="uiNameEn">نام و نام خانوادگی(انگلیسی)</label>
                     </div>
                     <div class="controls">
-                       <input class="input_c en" type="text" name="uiNameEn">
+                       <input class="input_c en" type="text" name="uiNameEn" id="uiNameEn" onkeypress="allowEnglish(event);setLimit(event, 150, 'uiNameEn');" onkeydown="checkFloor(event, 1, 'uiNameEn');">
                     </div>
+                    <span class="error" id="uiNameEn-error"></span>
                 </div>
 
 
@@ -64,8 +67,10 @@
                        <label for="email">آدرس پست الکترونیکی</label>
                     </div>
                     <div class="controls">
-                       <input class="input_c en" type="text" name="email">
+                       <input class="input_c en" type="text" name="email" id="uiEmail" required oninvalid="this.setCustomValidity('لطفا آدرس پست الکترونیکی خود را به طور صحیح وارد کنید.')"
+                       oninput="setCustomValidity('')", onkeypress="checkEmail(event, 'uiEmail')"onkeydown ="checkEmail_error(event, 'uiEmail');">
                     </div>
+                    <span class="error" id="uiEmail-error"></span>
                 </div>
 
 
@@ -74,8 +79,9 @@
                        <label for="phoneNum">شماره تلفن همراه</label>
                     </div>
                     <div class="controls">
-                       <input class="input_c" type="text" name="phoneNum">
+                       <input class="input_c en" type="text" name="phoneNum" id="phoneNum" value="09"  onkeypress= "checkPhoneNum(event, 'phoneNum');" onkeydown ="checkPhoneNum_error(event, 'phoneNum');">
                     </div>
+                    <span class="error" id="phoneNum-error"></span>
                 </div>
 
                 
@@ -163,4 +169,5 @@
         تعلق دارد
     </div>
 </body>
+<script src="main.js"></script>
 </html>
