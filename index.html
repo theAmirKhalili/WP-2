@@ -101,7 +101,7 @@
                        <label for="pass">رمز عبور</label>
                     </div>
                     <div class="controls">
-                       <input class="input_c en" type="text" name="pass" id="pass" onkeypress="checkPass(event, 'ssn');" onkeydown="checkPass_error(event, 'ssn');">
+                       <input class="input_c en" type="text" name="pass" id="pass" onkeypress="checkPass(event, 'pass');" onkeydown="checkPass_error(event, 'pass');">
                     </div>
                     <span class="error" id="pass-error"></span>
                 </div>
@@ -112,8 +112,9 @@
                        <label for="confirmPass">تایید رمز عبور</label>
                     </div>
                     <div class="controls">
-                       <input class="input_c en" type="text" name="confirmPass">
+                       <input class="input_c en" type="text" name="confirmPass" id="confirmPass" onkeypress="checkConfirmPass(event, 'confirmPass');" onkeydown="checkConfirmPass_error(event, 'confirmPass');">
                     </div>
+                    <span class="error" id="confirmPass-error"></span>
                 </div>
 
 
@@ -122,8 +123,9 @@
                        <label for="address">آدرس</label>
                     </div>
                     <div class="controls">
-                        <textarea class="input_c txtArea"name="address"></textarea>
+                        <textarea class="input_c txtArea"name="address" id="address" onkeypress="allowPersian(event);setLimit(event, 250, 'address');" ></textarea>
                     </div>
+                    <span class="error" id="address-error"></span>
                 </div>
 
 
@@ -132,16 +134,20 @@
                        <label for="dob">تاریخ تولد</label>
                     </div>
                     <div class="controls">
-                       <input class="input_c" type="text" name="dob">
+                       <input class="input_c en" type="text" name="dob" id="dob" onkeypress="checkDob(event, 'dob');" onkeydown="checkDob_error(event, 'dob');">
                     </div>
+                    <span class="error" id="dob-error"></span>
                 </div>
                 
                 <div class="field">
                     <div class="caption">
                        <label for="isMarry">وضعیت تأهل</label>
                     </div>
-                    <div class="controls">
-                       <input class="input_c" type="text" name="isMarry">
+                    <div class="controls f2fa_">
+                       <input type="radio" name="isMarry" id="single" value="single" checked/>
+                       <label class="label" for="single">مجرد</label>                
+                       <input type="radio" name="isMarry" id=""value="married"/>
+                       <label class="label" for="married">متاهل</label>
                     </div>
                 </div>
 
@@ -149,8 +155,19 @@
                     <div class="caption">
                        <label for="fav">انتخاب علاقهمندیها</label>
                     </div>
-                    <div class="controls">
-                       <input class="input_c" type="text" name="fav">
+                    <div class="controls f2fa_">
+                     <input type="checkbox" name="fav" value="gaming">
+                     <label class="label" for="gaming">بازی‌های کامپیوتری</label>
+                     <br>
+                     <input type="checkbox" name="fav" value="programming">
+                     <label class="label" for="programming">برنامه نویسی</label>
+                     <br>
+                     <input type="checkbox" name="fav" value="watching-movie">
+                     <label class="label" for="watching-movie">تماشاکردن فیلم و سریال</label>
+                     <br>
+                     <input type="checkbox" name="fav" value="watching-anime">
+                     <label class="label" for="watching-anime"></label>تماشاکردن انیمه</label>
+
                     </div>
                 </div>
 

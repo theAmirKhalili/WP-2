@@ -96,6 +96,11 @@ fieldset{
     
 }
 
+.f2fa_ {
+    font-family: f2fa;
+    font-size: 12px;
+}
+
 .txtArea {
     height:60px;
     font-family: f2fa;
